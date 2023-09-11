@@ -49,8 +49,6 @@
     "type": "git",
     "url": "git+https://github.com/djscheuf/vitest-gwt.git"
   },
-  "peerDependencies": {
-  },
   "keywords": [
     "vitest",
     "gwt",
@@ -71,6 +69,9 @@
     "axios": "^1.5.0",
     "typescript": "^5.2.2",
     "wireit": "^0.13.0"
+  },
+  "peerDependencies": {
+    "vitest": "^0.34.4"
   },
   "dependencies": {
     "gwt-runner": "^2.3.0"
