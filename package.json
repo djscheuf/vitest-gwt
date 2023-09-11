@@ -1,6 +1,6 @@
 {
   "name": "vitest-gwt",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A small library to help vitest support given-when-then style testing without a bunch of overhead",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

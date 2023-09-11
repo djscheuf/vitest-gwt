@@ -23,7 +23,7 @@ bunch of overhead
     describe('test context', () => {
       test('has no expected errors', {
         given: {
-          mock_jest_test_function,
+          mock_vitest_test_function,
           GOOD_test_case,
         },
         when: {
@@ -50,7 +50,7 @@ In these cases, you can use the scenario definition style which allows chaining
 ```ts
 {
   given: {
-    mock_jest_test_function,
+    mock_vitest_test_function,
     GOOD_test_case,
   },
   scenario: [{
@@ -88,7 +88,7 @@ the `test.skip` method. We've provided this functionality with a distinct export
 disable your gwt style tests.
 
 ```js
-import test, {skiptest} from 'jest-gwt';
+import test, {skiptest} from 'vitest-gwt';
 
 describe('test context', () => {
   test('this test will run', {
