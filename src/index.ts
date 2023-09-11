@@ -10,6 +10,6 @@ import withAspectBuilder from './withAspect';
 export default gwtRunner(viTest);
 export { TestContext };
 
-export const xtest = (() => {}) as (<T>(name: string, def: GwtDefinition<T>) => void);
+export const skipTest = (() => {}) as (<T>(name: string, def: GwtDefinition<T>) => void);
 
 export const withAspect = withAspectBuilder(viBeforeEach, viAfterEach);

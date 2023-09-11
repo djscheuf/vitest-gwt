@@ -4,15 +4,16 @@ import { vi, expect, describe } from 'vitest';
 import test from './index';
 import withAspectBuilder from './withAspect';
 
+let MockTestContext = {
+  createContext: vi.fn(),
+  releaseContexT: vi.fn(),
+}
+
 vi.mock('gwt-runner', () => ({
   __esModule: true,
   ...vi.importActual('gwt-runner'),
-  TestContext: {
-    createContext: vi.fn(),
-    releaseContext: vi.fn(),
-  },
+  TestContext: MockTestContext,
 }));
-const MockTestContext = vi.mock(TestContext, true);
 
 describe('withAspect', () => {
   test('creates context BEFORE the before each', {

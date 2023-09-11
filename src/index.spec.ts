@@ -1,5 +1,5 @@
-import test, { xtest } from './index';
-import { describe, vi, expect } from 'vitest';
+import test, { skipTest } from './index';
+import { describe, vi, expect, Mock } from 'vitest';
 
 describe('jest-gwt', () => {
   test('xtest does NOT invoke methods', {
@@ -9,7 +9,7 @@ describe('jest-gwt', () => {
       a_then_function,
     },
     when: {
-      executing_an_xtest,
+      executing_a_skiptest,
     },
     then: {
       given_NOT_called,
@@ -29,9 +29,9 @@ describe('jest-gwt', () => {
 });
 
 type Context = {
-  given: vi.Mock<any>,
-  when: vi.Mock<any>,
-  then: vi.Mock<any>,
+  given: Mock<any>,
+  when: Mock<any>,
+  then: Mock<any>,
 
   module: any,
 };
@@ -48,8 +48,8 @@ function a_then_function(this: Context) {
   this.then = vi.fn();
 }
 
-function executing_an_xtest(this: Context) {
-  xtest('name', {
+function executing_a_skiptest(this: Context) {
+  skipTest('name', {
     given: {
       fn: this.given,
     },
