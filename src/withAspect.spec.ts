@@ -1,12 +1,10 @@
-import { TestContext } from 'gwt-runner';
 import { vi, expect, describe } from 'vitest';
-
 import test from './index';
 import withAspectBuilder from './withAspect';
 
 let MockTestContext = {
   createContext: vi.fn(),
-  releaseContexT: vi.fn(),
+  releaseContext: vi.fn(),
 }
 
 vi.mock('gwt-runner', () => ({
