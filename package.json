@@ -1,0 +1,78 @@
+{
+  "name": "vitest-gwt",
+  "version": "0.0.1",
+  "description": "A small library to help vitest support given-when-then style testing without a bunch of overhead",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src",
+    "!**/*.spec.ts"
+  ],
+  "scripts": {
+    "build": "wireit",
+    "test": "wireit",
+    "lint": "wireit",
+    "test:coverage": "wireit",
+    "prepublishOnly": "wireit"
+  },
+  "wireit": {
+    "build": {
+      "command": "tsc --project ./tsconfig.build.json",
+      "files": [
+        "src/**/*.ts",
+        "tsconfig.*",
+        "!src/**/*.spec.ts"
+      ],
+      "output": [
+        "lib/**"
+      ]
+    },
+    "lint": {
+      "command": "eslint ./src ./examples"
+    },
+    "test": {
+      "command": "vitest"
+    },
+    "test:coverage": {
+      "command": "vitest run --coverage"
+    },
+    "prepublishOnly": {
+      "dependencies": [
+        "lint",
+        "test:coverage",
+        "build"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djscheuf/vitest-gwt.git"
+  },
+  "peerDependencies": {
+  },
+  "keywords": [
+    "vitest",
+    "gwt",
+    "unit",
+    "testing",
+    "given",
+    "when",
+    "then"
+  ],
+  "author": "Daniel Scheufler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/djscheuf/vitest-gwt/issues"
+  },
+  "homepage": "https://github.com/djscheuf/vitest-gwt#readme",
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "axios": "^1.5.0",
+    "typescript": "^5.2.2",
+    "wireit": "^0.13.0"
+  },
+  "dependencies": {
+    "gwt-runner": "^2.3.0"
+  }
+}
