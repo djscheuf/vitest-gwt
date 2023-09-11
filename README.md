@@ -6,7 +6,7 @@ bunch of overhead
 
 | vitest-gwt Version | vitest Version |
 | ---------------- | ------------ |
-|       1.x        |  ??? |
+|       1.x        |  ^0.34.4 |
 
 ## Usage
 
